@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Practice Suite" parallel="tests" data-provider-thread-count="4">
+    <listeners>
+        <listener class-name="com.listeners.ScenarioListener"/>
+    </listeners>
+    <test name="CukeTests">
+        <classes>
+            <class name ="com.cukes.CukeTestNgRunner"/>
+        </classes>
+    </test>
+
+<!--    <Test name="CukeTestViaTests">-->
+<!--        <classes>-->
+<!--            <class name ="com.config.Tests"/>-->
+<!--        </classes>-->
+<!--    </Test>-->
+</suite>

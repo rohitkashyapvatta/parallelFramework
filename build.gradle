@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext.libraries = [
+        testng         : '7.3.0',
+        cucumber       : '6.10.0',
+        cucumberJvmDeps: '1.0.6',
+        selenium       : '3.141.59'
+]
+
+dependencies {
+    compile group: 'org.testng', name: 'testng', version: '7.3.0'
+    compile group: 'io.cucumber', name: 'cucumber-java', version: '6.10.0'
+    compile group: 'io.cucumber', name: 'cucumber-core', version: '6.10.0'
+    compile group: 'io.cucumber', name: 'cucumber-testng', version: '6.10.0'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    compile group: 'io.cucumber', name: 'gherkin', version: '16.0.0'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-api', version: '3.141.59'
+    compile group: 'com.google.guava', name: 'guava', version: '30.1-jre'
+    compile group: 'commons-io', name: 'commons-io', version: '2.4'
+    compile group: 'org.imgscalr', name: 'imgscalr-lib', version: '4.2'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+    implementation 'com.github.loyada.dollarx:dollarx-all:1.2.3'
+}
+
+test {
+    useTestNG() {
+        suites 'src/test/resources/testng.xml'
+    }
+
+    ignoreFailures = true
+    testLogging.showStandardStreams = true
+    reports.html.enabled = true
+}
